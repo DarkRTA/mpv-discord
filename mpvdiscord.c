@@ -8,8 +8,6 @@
 #include <mpv/client.h>
 #include "discord_rpc.h"
 
-int mpv_command_ret(mpv_handle *ctx, char *args[], mpv_node *result) ;
-
 //yeah
 static void nullfunc() {}
 
@@ -43,7 +41,7 @@ static void update(mpv_handle *handle) {
 		mpv_get_property(handle, "pause", MPV_FORMAT_FLAG, &paused);
 		
 		mpv_node result;
-		char *args[] = {
+		const char *args[] = {
 			"expand-text",
 			NULL,
 			NULL
